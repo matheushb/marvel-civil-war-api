@@ -21,3 +21,64 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Character {
+  id             String           @id @default(cuid())
+  name           String
+  description    String
+  thumbnail      String
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  CharacterComic CharacterComic[]
+}
+
+model Comic {
+  id             String           @id @default(cuid())
+  title          String
+  description    String
+  thumbnail      String
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  CharacterComic CharacterComic[]
+  ComicCreator   ComicCreator[]
+}
+
+model Creator {
+  id           String         @id @default(cuid())
+  name         String
+  role         CreatorRole
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  ComicCreator ComicCreator[]
+}
+model CharacterComic {
+  id          String    @id @default(cuid())
+  character   Character @relation(fields: [characterId], references: [id])
+  characterId String
+  comic       Comic     @relation(fields: [comicId], references: [id])
+  comicId     String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model ComicCreator {
+  id        String      @id @default(cuid())
+  comic     Comic       @relation(fields: [comicId], references: [id])
+  comicId   String
+  creator   Creator     @relation(fields: [creatorId], references: [id])
+  creatorId String
+  role      CreatorRole
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+enum CreatorRole {
+  WRITER
+  PENCILER
+  INKER
+  COLORIST
+  LETTERER
+  EDITOR
+  COVER_ARTIST
+  OTHER
+}
