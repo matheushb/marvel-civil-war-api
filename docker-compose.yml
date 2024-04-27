@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: marvel_db
+    ports:
+      - '5399:5432'
