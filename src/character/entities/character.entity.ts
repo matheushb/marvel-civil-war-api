@@ -1,3 +1,11 @@
+export interface CharacterEntity {
+  id: string;
+  name: string;
+  description: string;
+  thumbnail: string;
+  created_at: Date;
+  updated_at: Date;
+}
 /**
  * @swagger
  * components:
@@ -44,12 +52,3 @@
  *           description: Data de atualização do personagem
  *           example: 2024-03-01T00:00:00.000Z
  */
-
-export interface CharacterEntity {
-  id: string;
-  name: string;
-  description: string;
-  thumbnail: string;
-  created_at: Date;
-  updated_at: Date;
-}
