@@ -4,6 +4,11 @@ import { ComicService } from "./comic.service";
 export class ComicController {
   constructor(private readonly comicService: ComicService) {}
 
+  async create(req: Request, res: Response) {
+    const comic = await this.comicService.create(req.body);
+    return res.status(201).json(comic);
+  }
+
   async findAll(req: Request, res: Response) {
     const comics = await this.comicService.findAll();
     return res.status(200).json(comics);

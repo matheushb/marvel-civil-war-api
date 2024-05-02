@@ -8,7 +8,6 @@ export class CreatorService {
 
   async create(createCreatorDto: CreateCreatorDto) {
     const creator = await this.creatorRepository.create(createCreatorDto);
-
     return creator;
   }
 

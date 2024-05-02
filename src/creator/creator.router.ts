@@ -21,6 +21,36 @@ const creatorRoutes = Router();
 /**
  * @swagger
  * /creators:
+ *   post:
+ *     summary: Cria um novo criador
+ *     tags: [Creators]
+ *     security:
+ *      - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Creator'
+ *     responses:
+ *       201:
+ *         description: criador criado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ReturnCreator'
+ * */
+creatorRoutes.post(
+  "/creators",
+  validate(updateCreatorDto),
+  asyncErrorHandler(async (req: Request, res: Response) => {
+    await creatorController.create(req, res);
+  })
+);
+
+/**
+ * @swagger
+ * /creators:
  *   get:
  *     summary: Retorna todos os criadores
  *     tags: [Creators]

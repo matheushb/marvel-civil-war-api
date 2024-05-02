@@ -4,6 +4,11 @@ import { CreatorService } from "./creator.service";
 export class CreatorController {
   constructor(private readonly creatorService: CreatorService) {}
 
+  async create(req: Request, res: Response) {
+    const creator = await this.creatorService.create(req.body);
+    return res.status(201).json(creator);
+  }
+
   async findAll(req: Request, res: Response) {
     const creators = await this.creatorService.findAll();
     return res.status(200).json(creators);

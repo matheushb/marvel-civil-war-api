@@ -21,6 +21,36 @@ const characterRoutes = Router();
 /**
  * @swagger
  * /characters:
+ *   post:
+ *     summary: Cria um novo personagem
+ *     tags: [Character]
+ *     security:
+ *      - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Character'
+ *     responses:
+ *       201:
+ *         description: personagem criado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ReturnCharacter'
+ * */
+characterRoutes.post(
+  "/characters",
+  validate(updateCharacterDto),
+  asyncErrorHandler(async (req: Request, res: Response) => {
+    await characterController.create(req, res);
+  })
+);
+
+/**
+ * @swagger
+ * /characters:
  *   get:
  *     summary: Retorna todos os personagens
  *     tags: [Character]

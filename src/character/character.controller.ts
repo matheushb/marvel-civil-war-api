@@ -4,6 +4,11 @@ import { CharacterService } from "./character.service";
 export class CharacterController {
   constructor(private readonly characterService: CharacterService) {}
 
+  async create(req: Request, res: Response) {
+    const character = await this.characterService.create(req.body);
+    return res.status(201).json(character);
+  }
+
   async findAll(req: Request, res: Response) {
     const characters = await this.characterService.findAll();
     return res.status(200).json(characters);
