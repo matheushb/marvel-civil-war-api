@@ -38,7 +38,6 @@ Critérios de Avaliação Completeness das operações CRUD para cada entidade. 
 
 Notas Finais Esta atividade não apenas aprofunda seu entendimento do Universo Marvel, mas também desenvolve habilidades cruciais em design de API, modelagem de dados, e testes de software. Boa sorte, e que a força dos super-heróis esteja com você!
 
-
 domingo 28 entrega
 node
 consumir api da marvel
@@ -46,9 +45,10 @@ operacoes com metodos de array
 mega saga da marvel ?
 buscar todos os personagens que apareceram na mega saga
 buscar todas as info
- - comics que apareceram
 
-Testes 
+- comics que apareceram
+
+Testes
 Documentacao (Swagger) e README
 Autocannon
 Jwt
@@ -74,6 +74,8 @@ md5: a3e18fe7b9a0d2b1aa7e506d2053c922
 
 https://gateway.marvel.com/v1/public/comics?ts=1&apikey=2f2025feefe33f26220c8192319f4587&hash=a3e18fe7b9a0d2b1aa7e506d2053c922
 
-rotas: 
+rotas:
 
-https://developer.marvel.com/docs
+[GET](https://gateway.marvel.com:443/v1/public/series/344/characters?ts=1&apikey=2f2025feefe33f26220c8192319f4587&hash=a3e18fe7b9a0d2b1aa7e506d2053c922)Fetches lists of characters filtered by a series id.
+[GET](https://gateway.marvel.com:443/v1/public/series/344/comics?ts=1&apikey=2f2025feefe33f26220c8192319f4587&hash=a3e18fe7b9a0d2b1aa7e506d2053c922)Fetches lists of comics filtered by a series id.
+[GET](https://gateway.marvel.com:443/v1/public/series/344/creators?ts=1&apikey=2f2025feefe33f26220c8192319f4587&hash=a3e18fe7b9a0d2b1aa7e506d2053c922)Fetches lists of creators filtered by a series id.
