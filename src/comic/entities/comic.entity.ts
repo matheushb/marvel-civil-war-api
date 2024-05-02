@@ -19,6 +19,9 @@ export interface ComicEntity {
  *         description:
  *           type: string
  *           description: Descrição do comic
+ *         thumbnail:
+ *           type: string
+ *           description: Thumbnail do comic
  *     ReturnComic:
  *       type: object
  *       properties:
@@ -31,6 +34,9 @@ export interface ComicEntity {
  *         description:
  *           type: string
  *           description: Descrição do comic
+ *         thumbnail:
+ *           type: string
+ *           description: Thumbnail do comic
  *         createdAt:
  *           type: string
  *           description: Data de criação do comic

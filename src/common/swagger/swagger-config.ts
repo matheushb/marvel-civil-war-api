@@ -21,7 +21,7 @@ const options = {
     path.resolve(__dirname, "../../character/character.router.ts"),
     path.resolve(__dirname, "../../character/entities/character.entity.ts"),
     path.resolve(__dirname, "../../creator/creator.router.ts"),
-    path.resolve(__dirname, "../../creator/entities/creator.entity.ts.ts"),
+    path.resolve(__dirname, "../../creator/entities/creator.entity.ts"),
     path.resolve(__dirname, "../../comic/comic.router.ts"),
     path.resolve(__dirname, "../../comic/entities/comic.entity.ts"),
     path.resolve(__dirname, "../../common/security/jwt-token.entity.ts"),
