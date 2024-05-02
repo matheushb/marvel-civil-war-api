@@ -6,11 +6,13 @@ export const errorMiddleware = (
   err: Error,
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ) => {
   let message = "Internal Server Error";
   let statusCode = 500;
   let { name } = err;
+
+  console.log(err);
 
   if (err instanceof HttpException) {
     message = err.message;
