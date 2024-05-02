@@ -67,7 +67,6 @@ model ComicCreator {
   comicId   String
   creator   Creator     @relation(fields: [creatorId], references: [id])
   creatorId String
-  role      CreatorRole
   createdAt DateTime    @default(now())
   updatedAt DateTime    @updatedAt
 }
