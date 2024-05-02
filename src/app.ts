@@ -10,6 +10,8 @@ import { opts, specs } from "./common/swagger/swagger-config";
 import { PrismaClient } from "@prisma/client";
 import { jwtValidator } from "./common/middlewares/jwt-validator.middleware";
 import { errorMiddleware } from "./common/middlewares/error-handler.middleware";
+import characterComicRouter from "./character-comic/character-comic.router";
+import comicCreatorRouter from "./comic-creator/comic-creator.router";
 
 const prismaClient = new PrismaClient();
 
@@ -49,6 +51,8 @@ class App {
     this.app.use(comicRouter);
     this.app.use(creatorRouter);
     this.app.use(characterRouter);
+    this.app.use(characterComicRouter);
+    this.app.use(comicCreatorRouter);
   }
 }
 

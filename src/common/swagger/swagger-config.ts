@@ -22,6 +22,16 @@ const options = {
     path.resolve(__dirname, "../../character/entities/character.entity.ts"),
     path.resolve(__dirname, "../../creator/creator.router.ts"),
     path.resolve(__dirname, "../../creator/entities/creator.entity.ts"),
+    path.resolve(__dirname, "../../character-comic/character-comic.router.ts"),
+    path.resolve(
+      __dirname,
+      "../../character-comic/entities/character-comic.entity.ts"
+    ),
+    path.resolve(__dirname, "../../comic-creator/comic-creator.router.ts"),
+    path.resolve(
+      __dirname,
+      "../../comic-creator/entities/comic-creator.entity.ts"
+    ),
     path.resolve(__dirname, "../../comic/comic.router.ts"),
     path.resolve(__dirname, "../../comic/entities/comic.entity.ts"),
     path.resolve(__dirname, "../../common/security/jwt-token.entity.ts"),
