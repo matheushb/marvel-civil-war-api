@@ -14,6 +14,8 @@ const options = {
   },
 
   apis: [
+    path.resolve(__dirname, "../../app-router.ts"),
+    path.resolve(__dirname, "../../seed/seed.router.ts"),
     path.resolve(__dirname, "../../auth/auth.router.ts"),
     path.resolve(__dirname, "../../auth/dto/login.dto.ts"),
     path.resolve(__dirname, "../../user/user.router.ts"),

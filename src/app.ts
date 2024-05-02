@@ -12,6 +12,7 @@ import { jwtValidator } from "./common/middlewares/jwt-validator.middleware";
 import { errorMiddleware } from "./common/middlewares/error-handler.middleware";
 import characterComicRouter from "./character-comic/character-comic.router";
 import comicCreatorRouter from "./comic-creator/comic-creator.router";
+import seedRouter from "./seed/seed.router";
 
 const prismaClient = new PrismaClient();
 
@@ -46,6 +47,7 @@ class App {
   async routes() {
     this.app.use("/api", swaggerUi.serve, swaggerUi.setup(specs, opts));
     this.app.use(appRouter);
+    this.app.use(seedRouter);
     this.app.use(userRouter);
     this.app.use(authRouter);
     this.app.use(comicRouter);
