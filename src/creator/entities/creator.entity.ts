@@ -1,10 +1,23 @@
 export interface CreatorEntity {
   id: string;
   name: string;
-  role: string;
+  role: CreatorRole;
   created_at: Date;
   updated_at: Date;
 }
+
+export enum CreatorRole {
+  WRITER = "WRITER",
+  PENCILER = "PENCILLER",
+  PENCILLER = "PENCILLER",
+  INKER = "INKER",
+  COLORIST = "COLORIST",
+  LETTERER = "LETTERER",
+  EDITOR = "EDITOR",
+  COVER_ARTIST = "COVER_ARTIST",
+  OTHER = "OTHER",
+}
+
 /**
  * @swagger
  * components:
@@ -19,6 +32,7 @@ export interface CreatorEntity {
  *         role:
  *           type: string
  *           description: Função do criador
+ *           enum: [WRITER, PENCILLER, PENCILER, INKER, COLORIST, LETTERER, EDITOR, COVER_ARTIST, OTHER]
  *           example: WRITER
  *     ReturnCreator:
  *       type: object
@@ -33,6 +47,7 @@ export interface CreatorEntity {
  *         role:
  *           type: string
  *           description: Função do criador
+ *           enum: [WRITER, PENCILLER, PENCILER, INKER, COLORIST, LETTERER, EDITOR, COVER_ARTIST, OTHER]
  *           example: WRITER
  *         createdAt:
  *           type: string
