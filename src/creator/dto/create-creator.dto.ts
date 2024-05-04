@@ -1,4 +1,4 @@
-import { CreatorRole } from "@prisma/client";
+import { CreatorRole } from "../entities/creator.entity";
 
 export interface CreateCreatorDto {
   name: string;
@@ -7,9 +7,12 @@ export interface CreateCreatorDto {
 
 export const createCreatorDto = {
   name: {
+    type: "string",
     required: "Name is required",
   },
   role: {
+    type: "string",
     required: "Role is required",
+    enum: Object.values(CreatorRole),
   },
 };
