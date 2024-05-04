@@ -5,6 +5,7 @@ import { CreatorController } from "./creator.controller";
 import { CreatorService } from "./creator.service";
 import { CreatorRepository } from "./creator.repository";
 import { updateCreatorDto } from "./dto/update-creator.dto";
+import { createCreatorDto } from "./dto/create-creator.dto";
 
 const creatorController = new CreatorController(
   new CreatorService(new CreatorRepository())
@@ -42,7 +43,7 @@ const creatorRoutes = Router();
  * */
 creatorRoutes.post(
   "/creators",
-  validate(updateCreatorDto),
+  validate(createCreatorDto),
   asyncErrorHandler(async (req: Request, res: Response) => {
     await creatorController.create(req, res);
   })

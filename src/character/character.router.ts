@@ -5,6 +5,7 @@ import { CharacterController } from "./character.controller";
 import { CharacterRepository } from "./character.repository";
 import { CharacterService } from "./character.service";
 import { updateCharacterDto } from "./dto/update-character.dto";
+import { createCharacterDto } from "./dto/create-character.dto";
 
 const characterController = new CharacterController(
   new CharacterService(new CharacterRepository())
@@ -42,7 +43,7 @@ const characterRoutes = Router();
  * */
 characterRoutes.post(
   "/characters",
-  validate(updateCharacterDto),
+  validate(createCharacterDto),
   asyncErrorHandler(async (req: Request, res: Response) => {
     await characterController.create(req, res);
   })
