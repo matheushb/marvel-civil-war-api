@@ -12,8 +12,6 @@ export const errorMiddleware = (
   let statusCode = 500;
   let { name } = err;
 
-  console.log(err);
-
   if (err instanceof HttpException) {
     message = err.message;
     statusCode = err.statusCode;
