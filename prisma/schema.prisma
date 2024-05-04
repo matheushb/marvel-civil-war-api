@@ -74,6 +74,7 @@ model ComicCreator {
 enum CreatorRole {
   WRITER
   PENCILER
+  PENCILLER
   INKER
   COLORIST
   LETTERER
